@@ -13,7 +13,11 @@ const promiseArr = [promise1, promise2, promise3, promise4];
 
 /**
  * @task
- * Use a correct PROMISE shortcut that will log the caught error (reason) from promise2
+ * Use a correct PROMISE shortcut from the list:
+ * * .all()
+ * * .any()
+ * * .allSettled()
+ * that will log and return the caught rejection reason from promise2
  * when promiseArr was passed as the argument
  */
 
@@ -21,14 +25,24 @@ export const result1 = val; // Your code here
 
 /**
  * @task
- * Use a correct PROMISE shortcut that will log and return the resolved value of promise3;
+ * Use a correct PROMISE shortcut from the list:
+ * * .all()
+ * * .any()
+ * * .allSettled()
+ * that will log and return the resolved value of promise3;
+ * when promiseArr was passed as the argument
  */
 
 export const result2 = val; // Your code here
 
 /**
  * @task
- * Use a correct PROMISE shortcut that will log and return an array of all promises statuses and values/reasons;
+ * Use a correct PROMISE shortcut from the list:
+ * * .all()
+ * * .any()
+ * * .allSettled()
+ * that will log and return an array of all promises statuses and values/reasons;
+ * when promiseArr was passed as the argument
  */
 
 export const result3 = val; // Your code here
@@ -49,7 +63,10 @@ export const result4 = Promise.race(newPromiseArr)
   .then((data) => {
     return data;
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+    return err;
+  });
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

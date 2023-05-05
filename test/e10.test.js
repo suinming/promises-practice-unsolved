@@ -43,15 +43,13 @@ describe('Result4 variable test', () => {
 
 describe('Result1 promise test', () => {
   it("Result1 should return a resolved value of 'Promise 2 REJECTED'", async () => {
-    await result1;
-    expect(result1).resolves.toEqual('Promise 2 REJECTED');
+    expect(await result1).toEqual('Promise 2 REJECTED');
   });
 });
 
 describe('Result2 promise test', () => {
   it("Result2 should return a resolved value of 'Promise 3 RESOLVED'", async () => {
-    await result2;
-    expect(result2).resolves.toEqual('Promise 3 RESOLVED');
+    expect(await result2).toEqual('Promise 3 RESOLVED');
   });
 });
 
@@ -66,18 +64,16 @@ describe('Result3 promise test', () => {
     { status: 'fulfilled', value: 'RESOLVED AGAIN' },
     { status: 'rejected', reason: 'Promise 2 REJECTED' },
     { status: 'fulfilled', value: 'Promise 3 RESOLVED' },
-    { status: 'fulfilled', value: 'RESOLVED AGAIN' },
+    { status: 'fulfilled', value: 'RESOLVED AGAIN' }
   ];
 
   it('Result3 should return a resolved value of the array of all promises status and value', async () => {
-    await result3;
-    expect(result3).resolves.toEqual(sampleData);
+    expect(await result3).toEqual(sampleData);
   });
 });
 
 describe('Result4 promise test', () => {
   it("Result4 should return a resolved value of 'RESOLVED AGAIN'", async () => {
-    await result4;
-    expect(result4).resolves.toEqual('RESOLVED AGAIN');
+    expect(await result4).toEqual('RESOLVED AGAIN');
   });
 });

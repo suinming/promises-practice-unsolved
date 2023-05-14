@@ -14,13 +14,14 @@
  *          }
  */
 
-export const handlePromise = () => {
+export const handlePromise = async () => {
   // Your code goes here...
-  
-}
-
-
-
+  return new Promise((resolve, reject) => {
+    reject("REJECTED");
+  })
+    .catch((res) => console.log(res))
+    .finally(() => console.log("This promise is finished!"));
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
